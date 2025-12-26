@@ -11,17 +11,14 @@ export const metadata: Metadata = {
     title: "MyLocalCLI - Your Own AI Coding Assistant",
     description: "A Claude Code alternative that works with local LLMs and free cloud APIs.",
     type: "website",
-    url: "https://cli.kprsnt.in",
+    url: "https://mlc.kprsnt.in",
   },
 };
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/docs/getting-started", label: "Getting Started" },
-  { href: "/docs/tools", label: "Tools" },
-  { href: "/docs/skills", label: "Skills" },
-  { href: "/docs/agents", label: "Agents" },
-  { href: "/docs/configuration", label: "Configuration" },
+  { href: "/docs/getting-started", label: "Docs" },
+  { href: "/docs/changelog", label: "Changelog" },
 ];
 
 export default function RootLayout({

@@ -15,6 +15,8 @@ const sidebarLinks = [
     { href: '/docs/skills', label: 'Skills System' },
     { href: '/docs/agents', label: 'Agents Guide' },
     { href: '/docs/configuration', label: 'Configuration' },
+    { href: '/docs/troubleshooting', label: 'Troubleshooting' },
+    { href: '/docs/changelog', label: 'Changelog' },
 ];
 
 export default function DocLayout({ content, title }: DocLayoutProps) {

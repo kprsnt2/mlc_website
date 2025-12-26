@@ -215,6 +215,91 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Privacy & Security */}
+      <section className="bg-gradient-to-b from-[#0a0a0a] to-[#171717]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="text-3xl font-bold text-center text-white mb-4">🛡️ Privacy & Security</h2>
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+            We believe your code should stay private. Choose the right provider for your needs.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Local Providers */}
+            <div className="bg-[#0a0a0a] border border-[#10b981]/30 rounded-xl p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-2xl">✅</span>
+                <h3 className="text-xl font-semibold text-[#10b981]">Local Providers (Full Privacy)</h3>
+              </div>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#10b981]">•</span>
+                  <span><strong>LM Studio, Ollama</strong> - All data stays on YOUR machine</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#10b981]">•</span>
+                  <span>No data leaves your computer - 100% private</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#10b981]">•</span>
+                  <span>Recommended for sensitive/proprietary code</span>
+                </li>
+              </ul>
+              <div className="mt-4 pt-4 border-t border-[#262626]">
+                <p className="text-sm text-gray-500 mb-2">Get started:</p>
+                <div className="flex flex-wrap gap-2">
+                  <a href="https://lmstudio.ai" target="_blank" rel="noopener noreferrer" className="text-sm px-3 py-1 bg-[#171717] hover:bg-[#262626] text-[#10b981] rounded transition-colors">
+                    LM Studio →
+                  </a>
+                  <a href="https://ollama.ai" target="_blank" rel="noopener noreferrer" className="text-sm px-3 py-1 bg-[#171717] hover:bg-[#262626] text-[#10b981] rounded transition-colors">
+                    Ollama →
+                  </a>
+                  <a href="https://docs.vllm.ai" target="_blank" rel="noopener noreferrer" className="text-sm px-3 py-1 bg-[#171717] hover:bg-[#262626] text-[#10b981] rounded transition-colors">
+                    vLLM (GPU) →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Cloud Providers */}
+            <div className="bg-[#0a0a0a] border border-[#f59e0b]/30 rounded-xl p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-2xl">⚠️</span>
+                <h3 className="text-xl font-semibold text-[#f59e0b]">Cloud Providers (Data Shared)</h3>
+              </div>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#f59e0b]">•</span>
+                  <span><strong>OpenRouter, Groq, OpenAI</strong> - Data sent to their servers</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#f59e0b]">•</span>
+                  <span>Providers may log or store your prompts/code</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#f59e0b]">•</span>
+                  <span>Good for non-sensitive projects or quick testing</span>
+                </li>
+              </ul>
+              <div className="mt-4 pt-4 border-t border-[#262626]">
+                <p className="text-sm text-gray-500 mb-2">Free API keys:</p>
+                <div className="flex flex-wrap gap-2">
+                  <a href="https://openrouter.ai" target="_blank" rel="noopener noreferrer" className="text-sm px-3 py-1 bg-[#171717] hover:bg-[#262626] text-[#f59e0b] rounded transition-colors">
+                    OpenRouter →
+                  </a>
+                  <a href="https://console.groq.com" target="_blank" rel="noopener noreferrer" className="text-sm px-3 py-1 bg-[#171717] hover:bg-[#262626] text-[#f59e0b] rounded transition-colors">
+                    Groq →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-center text-gray-500 text-sm mt-8">
+            💡 <strong>Tip:</strong> For production use with sensitive code, we recommend local providers or self-hosting with vLLM.
+          </p>
+        </div>
+      </section>
+
       {/* Documentation */}
       <section className="bg-[#171717] border-y border-[#262626]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
