@@ -11,6 +11,8 @@ interface DocLayoutProps {
 
 const sidebarLinks = [
     { href: '/docs/getting-started', label: 'Getting Started' },
+    { href: '/docs/modes', label: 'Modes & Shell' },
+    { href: '/docs/features', label: 'Advanced Features' },
     { href: '/docs/tools', label: 'Tools Reference' },
     { href: '/docs/skills', label: 'Skills System' },
     { href: '/docs/agents', label: 'Agents Guide' },
