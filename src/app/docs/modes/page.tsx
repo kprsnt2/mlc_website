@@ -108,6 +108,27 @@ The mode indicator appears in your prompt:
 ✔ [BUILD] You: your message here
 ✔ [PLAN] You: analyzing the code...
 \`\`\`
+
+---
+
+## New in v3.4.1: Enhanced TUI
+
+MyLocalCLI now features a beautiful full-screen terminal interface:
+
+### Visual Features
+- 🎨 **Gradient Logo** - Purple-to-cyan color transitions
+- ╭─╮ **Rounded Boxes** - Premium Unicode borders
+- 🔄 **Animated Thinking** - Braille spinner while AI processes
+- 🖍️ **Syntax Highlighting** - Code blocks with color
+
+### New in v3.4.1
+- 💡 **Welcome Tips** - Random helpful tip on each startup
+- 📊 **Context Indicator** - Visual bar showing context usage: \`⟨████░░░░⟩ 32%\`
+- ⌨️ **Input History** - Commands remembered for recall
+- 🪟 **Terminal Title** - Window shows "MyLocalCLI"
+- 📐 **Resize Support** - Screen redraws on window resize
+
+Launch with \`mylocalcli\` or use \`--classic\` for the traditional mode.
 `;
 
     return <DocLayout content={content} title="Modes & Shell Commands" />;
