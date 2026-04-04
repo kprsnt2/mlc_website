@@ -4,12 +4,15 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const features = [
-  { icon: "🏠", title: "6 AI Providers", desc: "LM Studio, Ollama, OpenRouter, OpenAI, Groq, Custom" },
-  { icon: "🛠️", title: "26 Tools", desc: "File ops, search, git, web fetch, todos, multi-edit" },
+  { icon: "🏠", title: "7 AI Providers", desc: "LM Studio, Ollama, OpenRouter, OpenAI, Groq, NVIDIA API, Custom" },
+  { icon: "🛠️", title: "42 Tools", desc: "File ops, search, git, HTTP, testing, linting, project stats, notebooks" },
   { icon: "🤖", title: "5 Agents", desc: "Code reviewer, explorer, test generator, refactorer, doc writer" },
-  { icon: "🎓", title: "22 Skills", desc: "Auto-injected best practices for JS, Python, React, and more" },
-  { icon: "📋", title: "15+ Commands", desc: "Slash commands like Claude Code" },
+  { icon: "🎓", title: "38 Skills", desc: "Auto-injected best practices for JS, TS, Python, React, AWS, and more" },
+  { icon: "📋", title: "30+ Commands", desc: "Slash commands with cost tracking, permissions, routing, and more" },
   { icon: "🔒", title: "Private & Local", desc: "Runs locally, your data stays yours" },
+  { icon: "✨", title: "Animated UI", desc: "Gradient logo, animated startup, tool spinners, session summaries" },
+  { icon: "💰", title: "Cost Tracking", desc: "Real-time token usage, cost estimation, session summaries" },
+  { icon: "🔐", title: "Tool Permissions", desc: "Fine-grained control with deny lists, profiles, and mode-based gating" },
 ];
 
 const providers = [
@@ -18,15 +21,17 @@ const providers = [
   { name: "OpenRouter", type: "Cloud", free: true },
   { name: "Groq", type: "Cloud", free: true },
   { name: "OpenAI", type: "Cloud", free: false },
+  { name: "NVIDIA API", type: "Cloud", free: false },
   { name: "Custom", type: "Any", free: null },
 ];
 
 const docs = [
   { href: "/docs/getting-started", title: "Getting Started", desc: "Install and set up in 5 minutes" },
-  { href: "/docs/tools", title: "Tools Reference", desc: "26 built-in tools for file ops, git, and more" },
-  { href: "/docs/skills", title: "Skills System", desc: "22 skills with auto-injection" },
+  { href: "/docs/tools", title: "Tools Reference", desc: "42 built-in tools for files, git, HTTP, testing, and more" },
+  { href: "/docs/skills", title: "Skills System", desc: "38 skills with auto-injection" },
   { href: "/docs/agents", title: "Agents Guide", desc: "5 specialized AI agents" },
-  { href: "/docs/configuration", title: "Configuration", desc: "Provider settings and project config" },
+  { href: "/docs/configuration", title: "Configuration", desc: "7 providers, permissions, and project config" },
+  { href: "/docs/features", title: "Advanced Features", desc: "Animations, cost tracking, permissions, routing" },
 ];
 
 function CodeBlock({ command }: { command: string }) {
@@ -269,7 +274,7 @@ export default function Home() {
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-start gap-2">
                   <span className="text-[#f59e0b]">•</span>
-                  <span><strong>OpenRouter, Groq, OpenAI</strong> - Data sent to their servers</span>
+                  <span><strong>OpenRouter, Groq, OpenAI, NVIDIA</strong> - Data sent to their servers</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#f59e0b]">•</span>

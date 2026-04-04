@@ -151,6 +151,158 @@ Invoke specialized agents using @mentions for complex tasks.
 
 ---
 
+## 💰 Cost Tracking & Token Usage
+
+Monitor your session costs and token usage in real-time.
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| \`/cost\` | Show session token usage and estimated cost |
+| \`/session save\` | Persist session with token counts |
+| \`/session list\` | Show saved sessions |
+
+### Features
+
+- Real-time cost estimation with model-specific pricing
+- Animated session summary on exit shows messages, tool calls, tokens, cost, and duration
+
+### Example Usage
+
+\`\`\`bash
+/cost                # See current session usage and cost
+/session save        # Save session with token counts
+/session list        # View all saved sessions
+\`\`\`
+
+---
+
+## 🔒 Tool Permissions System
+
+Control which tools the AI can use with a fine-grained permissions system. Restrict access for safety or apply preset profiles.
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| \`/permissions\` | Show current permission state |
+| \`/permissions deny <tool>\` | Block a specific tool |
+| \`/permissions allow <tool>\` | Unblock a tool |
+| \`/permissions profile <name>\` | Apply a preset profile |
+
+### Built-in Profiles
+
+| Profile | Description |
+|---------|-------------|
+| \`full\` | All tools enabled (default) |
+| \`readonly\` | Only read operations allowed |
+| \`safe\` | No destructive operations |
+| \`noExec\` | No command execution |
+
+### Example Usage
+
+\`\`\`bash
+/permissions                     # See what's allowed
+/permissions deny bash           # Block shell execution
+/permissions profile readonly    # Switch to read-only mode
+/permissions allow edit_file     # Re-enable editing
+\`\`\`
+
+**Tip**: PLAN mode automatically blocks write tools — no manual config needed!
+
+---
+
+## 🧭 Prompt Router
+
+Understand how the AI would handle your prompt before sending it.
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| \`/route <prompt>\` | Show which tools/commands match your prompt |
+
+### Features
+
+- Scores prompts against all 42 tools and commands
+- Helps understand what the AI would use for a given request
+
+### Example Usage
+
+\`\`\`bash
+/route fix the bug in auth.ts    # See which tools would be used
+/route run the test suite        # Check routing for test commands
+\`\`\`
+
+---
+
+## 📡 Stream Events & Execution Registry
+
+Inspect the internal event stream and command execution history for debugging and transparency.
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| \`/events\` | Show the stream event log (message_start, tool_use, tool_result, etc.) |
+| \`/registry\` | Show all command/tool execution counts and recent activity |
+| \`/transcript\` | Show the session conversation transcript |
+
+### Example Usage
+
+\`\`\`bash
+/events       # View stream events
+/registry     # See tool usage stats
+/transcript   # Review full conversation
+\`\`\`
+
+---
+
+## 🎨 Animated UI
+
+MyLocalCLI features rich terminal animations for a polished developer experience.
+
+### Visual Effects
+
+- **Gradient Logo**: Purple-to-lavender color sweep rendered line by line
+- **Animated Startup**: Boot steps with spinner-to-checkmark transitions
+- **Tool Execution**: Per-tool icon spinners (e.g., 🚀 for read_file, 🔧 for edit, 🧪 for test_run)
+- **Mode Switch**: Flash effect animation with boxed display
+- **Session Exit**: Wipe transition + gradient header + staggered stat lines
+- **Thinking Animation**: Multi-phase cycle — Thinking → Reasoning → Processing → Generating
+
+### Gradient Palettes
+
+| Palette | Style |
+|---------|-------|
+| \`purple\` | Default purple-to-lavender sweep |
+| \`cyber\` | Cyberpunk-inspired blue-pink |
+| \`fire\` | Warm red-orange-yellow |
+| \`neon\` | Bright neon green-cyan |
+| \`matrix\` | Classic green terminal |
+
+---
+
+## 🩺 Doctor Command
+
+Diagnose your provider connections and configuration with a single command.
+
+### Usage
+
+\`\`\`bash
+mlc doctor    # Run connectivity checks
+\`\`\`
+
+### Features
+
+- Checks connectivity to all 7 providers
+- Probes common local OpenAI-compatible endpoints (ports 1234, 11434, 8080, 5000, 3000)
+- Reports model counts for connected providers
+- Shows current active provider and model configuration
+
+---
+
 ## Quick Reference
 
 | Feature | Command | Description |
@@ -160,6 +312,18 @@ Invoke specialized agents using @mentions for complex tasks.
 | Init project | \`/init <template>\` | Set up project config |
 | Create skill | \`/skill create <name>\` | Make custom skill |
 | Use subagent | \`@oracle <query>\` | Invoke specialized agent |
+| Session cost | \`/cost\` | Show token usage and cost |
+| Save session | \`/session save\` | Persist session with stats |
+| List sessions | \`/session list\` | Show saved sessions |
+| Permissions | \`/permissions\` | Show permission state |
+| Deny tool | \`/permissions deny <tool>\` | Block a specific tool |
+| Allow tool | \`/permissions allow <tool>\` | Unblock a tool |
+| Permission profile | \`/permissions profile <name>\` | Apply preset (full, readonly, safe, noExec) |
+| Route prompt | \`/route <prompt>\` | Preview tool matching for a prompt |
+| Stream events | \`/events\` | Show stream event log |
+| Registry | \`/registry\` | Show execution counts |
+| Transcript | \`/transcript\` | Show conversation transcript |
+| Doctor | \`mlc doctor\` | Check provider connectivity |
 `;
 
     return <DocLayout content={content} title="Advanced Features" />;
