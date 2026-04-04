@@ -3,7 +3,31 @@ import DocLayout from '../DocLayout';
 export default function FeaturesPage() {
     const content = `# Advanced Features
 
-MyLocalCLI includes powerful features inspired by professional CLI tools like OpenCode and AmpCode.
+MyLocalCLI includes powerful features inspired by professional CLI tools like OpenCode and AmpCode. As of **v4.0.2**, the CLI operates at Gemini-parity with the Claw-Code automation ecosystem.
+
+---
+
+## ⚡ Parallel Tool Execution
+
+Instead of executing tools synchronously, the CLI now uses Promise-mapped loops to fire off tools concurrently. For example, if the AI needs to check 5 different files, it will trigger exactly 5 simultaneous file reads rather than waiting. This massively reduces waiting time!
+
+---
+
+## 👁️ Multimodal Vision Injection
+
+MyLocalCLI natively understands images. Just drop a \`.png\`, \`.jpg\`, \`.jpeg\`, or \`.webp\` path into your prompt and the CLI will silently detect it, read it as \`base64\`, and inject it into the vision payload for your local LLM (like \`Llava\`) or cloud provider.
+
+---
+
+## 🔌 Standard-IO MCP Integration
+
+The CLI connects standard Model Context Protocol (MCP) servers locally via Node.js \`child_process\`. It spins up external ecosystem modules passing securely over \`stdio\` JSON-RPC pipes, so you can leverage the entire open-source MCP community directly inside MyLocalCLI!
+
+---
+
+## 🧠 Background Crons & Workers
+
+Background LLM workers execute autonomously without blocking your active prompt. Handled safely through local persisting ledgers (\`.mylocalcli/tasks.json\` and \`.mylocalcli/crons.json\`), these workers run on internal \`setInterval\` loops to poll project statuses, fix trailing errors, or monitor logs in the background!
 
 ---
 

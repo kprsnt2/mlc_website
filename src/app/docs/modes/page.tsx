@@ -111,24 +111,26 @@ The mode indicator appears in your prompt:
 
 ---
 
-## New in v3.4.1: Enhanced TUI
+## New in v4.0.2: Gemini & Claw-Code Feature Parity
 
-MyLocalCLI now features a beautiful full-screen terminal interface:
+MyLocalCLI has evolved into a fully autonomous, Gemini-caliber orchestrator natively mapping the [claw-code](https://github.com/ultraworkers/claw-code) backend.
 
-### Visual Features
-- 🎨 **Gradient Logo** - Purple-to-cyan color transitions
-- ╭─╮ **Rounded Boxes** - Premium Unicode borders
-- 🔄 **Animated Thinking** - Braille spinner while AI processes
-- 🖍️ **Syntax Highlighting** - Code blocks with color
+### ⚡ Parallel Tool Execution
+Instead of executing tools synchronously, the CLI now uses Promise-mapped loops to fire off tools (like \`read_file\` or \`run_command\`) concurrently, dramatically boosting performance on complex debugging tasks!
 
-### New in v3.4.1
-- 💡 **Welcome Tips** - Random helpful tip on each startup
-- 📊 **Context Indicator** - Visual bar showing context usage: \`⟨████░░░░⟩ 32%\`
-- ⌨️ **Input History** - Commands remembered for recall
-- 🪟 **Terminal Title** - Window shows "MyLocalCLI"
-- 📐 **Resize Support** - Screen redraws on window resize
+### 👁️ Multimodal Vision Injection
+Drop any \`.png\`, \`.jpg\`, \`.jpeg\`, or \`.webp\` path into your prompt and the CLI will natively encode it into a Base64 stream tailored for your Vision-enabled local models or APIs.
 
-Launch with \`mylocalcli\` or use \`--classic\` for the traditional mode.
+### 🔌 Standard-IO MCP Sub-Server Bridge
+Connect your local standard Model Context Protocol servers automatically. Instead of a hard-coded registry, we now use \`child_process\` to run JSON-RPC via \`stdio\`, exactly like advanced AI IDEs.
+
+### 🧠 Background Runtimes (Crons & Workers)
+Instead of blocking your prompt, \`taskRegistry.js\` and \`teamCronRegistry.js\` are backed directly into local \`.mylocalcli/json\` ledgers and execute via \`setInterval\`, executing code safely in the background using headless LLM workers.
+
+### 🧩 Dynamic Skills System
+Throw an \`example.js\` or \`instructions.md\` into \`.mylocalcli/skills/\` and the CLI automatically reads it upon launch, translating it into a usable \`tool\` bounded directly onto your agent context window natively!
+
+Launch with \`mylocalcli\` to experience the raw speed update.
 `;
 
     return <DocLayout content={content} title="Modes & Shell Commands" />;
